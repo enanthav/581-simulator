@@ -5,11 +5,12 @@ using UnityEngine.Video;
 
 
 public class ChangeVideo : MonoBehaviour {
-
+	GameObject[] assessmentObjects;
 	public VideoPlayer videoPlayer;
 	public VideoClip[] videos = new VideoClip[5];
 
 	void Start () {
+		assessmentObjects = GameObject.FindGameObjectsWithTag ("ShowOnAssess");
 	}
 
 	// Update is called once per frame
@@ -34,6 +35,9 @@ public class ChangeVideo : MonoBehaviour {
 		SwitchVideo (4);
 	}
 
+	public void PlayAssessment () {
+		SwitchVideo (5);
+	}
 
 	public void SwitchVideo(int index)
 	{
