@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/NetworkIt+360+Cardboard.unity
+- path: Assets/Scenes/End of Shift.unity
   isLoaded: 1
   isActive: 1

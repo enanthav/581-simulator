@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
-
+using UnityEngine.SceneManagement;
 
 public class ChangeVideo : MonoBehaviour {
 	GameObject[] assessmentObjects;
@@ -10,7 +10,7 @@ public class ChangeVideo : MonoBehaviour {
 	public VideoClip[] videos = new VideoClip[5];
 
 	void Start () {
-		assessmentObjects = GameObject.FindGameObjectsWithTag ("ShowOnAssess");
+//		assessmentObjects = GameObject.FindGameObjectsWithTag ("ShowOnAssess");
 	}
 
 	// Update is called once per frame
@@ -18,8 +18,15 @@ public class ChangeVideo : MonoBehaviour {
 
 	}
 
+	public void PlayAssessment () {
+		SceneManager.LoadScene ("Assessment");
+		//		SwitchVideo (5);
+	}
+
+
 	public void PlayRounding () {
-		SwitchVideo (1);
+		SceneManager.LoadScene ("Rounding");
+//		SwitchVideo (1);
 	}
 
 	// AGGRESSIVE VIDEO
@@ -32,11 +39,13 @@ public class ChangeVideo : MonoBehaviour {
 	}
 
 	public void PlayEndOfShift () {
-		SwitchVideo (4);
+//		SwitchVideo (4);
 	}
 
-	public void PlayAssessment () {
-		SwitchVideo (5);
+
+
+	public void EndOfShift () {
+		SceneManager.LoadScene ("End of Shift");
 	}
 
 	public void SwitchVideo(int index)
